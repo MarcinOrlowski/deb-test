@@ -29,9 +29,9 @@ spamdyke: $(OFILES)
 	@STRIP_CMD@
 
 install: spamdyke
-	cp spamdyke ${DESTDIR}/spamdyke-@PACKAGE_VERSION@
-	rm -f ${DESTDIR}/spamdyke
-	ln -s ${DESTDIR}/spamdyke-@PACKAGE_VERSION@ ${DESTDIR}/spamdyke
+	cp spamdyke /usr/local/bin/spamdyke-@PACKAGE_VERSION@
+	rm -f /usr/local/bin/spamdyke
+	ln -s /usr/local/bin/spamdyke-@PACKAGE_VERSION@ /usr/local/bin/spamdyke
 
 spamdyke.o: spamdyke.c spamdyke.h Makefile config.h
 	$(CC) $(CFLAGS) $(DEFS) -c spamdyke.c
