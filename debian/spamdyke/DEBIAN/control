@@ -1,0 +1,20 @@
+Package: spamdyke
+Version: 4.3.1-1
+Architecture: i386
+Maintainer: Marcin Orlowski <mail@marcinorlowski.com>
+Installed-Size: 344
+Depends: libc6 (>= 2.15), libssl1.0.0 (>= 1.0.0)
+Enhances: qmail
+Section: mail
+Priority: optional
+Homepage: http://www.spamdyke.org/
+Description: Powerful utility improving and enhancing Qmail mail server
+ Sspamdyke is a filter for monitoring and intercepting SMTP
+ connections between a remote host and a qmail server. Spam is blocked
+ while the remote server (spammer) is still connected; no additional
+ processing or storage is needed. In addition to all of its anti-spam
+ filters, spamdyke also includes a number of features to enhance qmail.
+ Best of all, using spamdyke does not require patching or recompiling
+ qmail!
+ .
+ Website: http://www.spamdyke.org/
