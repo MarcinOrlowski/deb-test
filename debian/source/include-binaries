@@ -1,0 +1,14 @@
+spamdyke/base64.o
+spamdyke/config_test.o
+spamdyke/configuration.o
+spamdyke/dns.o
+spamdyke/environment.o
+spamdyke/exec.o
+spamdyke/filter.o
+spamdyke/log.o
+spamdyke/md5.o
+spamdyke/search_fs.o
+spamdyke/spamdyke
+spamdyke/spamdyke.o
+spamdyke/tls.o
+spamdyke/usage.o

@@ -22,7 +22,7 @@ CFLAGS := @CFLAGS@ -funsigned-char @CPPFLAGS@
 LDFLAGS := @LDFLAGS@
 LIBS := @LIBS@
 
-PREFIX=usr/bin
+PREFIX=usr/local/bin
 
 OFILES := spamdyke.o configuration.o dns.o environment.o usage.o search_fs.o exec.o base64.o tls.o log.o config_test.o md5.o filter.o
 
@@ -33,8 +33,8 @@ spamdyke: $(OFILES)
 install: spamdyke
 	mkdir -p ${DESTDIR}/${PREFIX}
 	cp spamdyke ${DESTDIR}/${PREFIX}/spamdyke-@PACKAGE_VERSION@
-	rm -f ${DESTDIR}/${PREFIX}/spamdyke4
-	ln -s ${PREFIX}/spamdyke-@PACKAGE_VERSION@ ${DESTDIR}/${PREFIX}/spamdyke4
+	rm -f ${DESTDIR}/${PREFIX}/spamdyke
+	ln -s ${DESTDIR}/${PREFIX}/spamdyke-@PACKAGE_VERSION@ ${DESTDIR}/${PREFIX}/spamdyke
 
 spamdyke.o: spamdyke.c spamdyke.h Makefile config.h
 	$(CC) $(CFLAGS) $(DEFS) -c spamdyke.c

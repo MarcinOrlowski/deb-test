@@ -1,4 +1,4 @@
-# @configure_input@
+# Makefile.  Generated from Makefile.in by configure.
 ################################################################################
 # spamdyke -- a filter for stopping spam at connection time.
 # Copyright (C) 2012 Sam Clippinger (samc (at) silence (dot) org)
@@ -16,25 +16,25 @@
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
-CC := @CC@
-CPP := @CPP@
-CFLAGS := @CFLAGS@ -funsigned-char @CPPFLAGS@
-LDFLAGS := @LDFLAGS@
-LIBS := @LIBS@
+CC := gcc
+CPP := gcc -E
+CFLAGS := -Wall -O2 -funsigned-char -D_FORTIFY_SOURCE=2
+LDFLAGS := -Wl,-z,relro
+LIBS := -lssl -lcrypto  -lssl
 
-PREFIX=usr/bin
+PREFIX=usr/local/bin
 
 OFILES := spamdyke.o configuration.o dns.o environment.o usage.o search_fs.o exec.o base64.o tls.o log.o config_test.o md5.o filter.o
 
 spamdyke: $(OFILES)
 	$(CC) $(CFLAGS) $(DEFS) -o spamdyke $(OFILES) $(LDFLAGS) $(LIBS)
-	@STRIP_CMD@
+	strip spamdyke
 
 install: spamdyke
 	mkdir -p ${DESTDIR}/${PREFIX}
-	cp spamdyke ${DESTDIR}/${PREFIX}/spamdyke-@PACKAGE_VERSION@
-	rm -f ${DESTDIR}/${PREFIX}/spamdyke4
-	ln -s ${PREFIX}/spamdyke-@PACKAGE_VERSION@ ${DESTDIR}/${PREFIX}/spamdyke4
+	cp spamdyke ${DESTDIR}/${PREFIX}/spamdyke-4.3.1
+	rm -f ${DESTDIR}/${PREFIX}/spamdyke
+	ln -s ${DESTDIR}/${PREFIX}/spamdyke-4.3.1 ${DESTDIR}/${PREFIX}/spamdyke
 
 spamdyke.o: spamdyke.c spamdyke.h Makefile config.h
 	$(CC) $(CFLAGS) $(DEFS) -c spamdyke.c
