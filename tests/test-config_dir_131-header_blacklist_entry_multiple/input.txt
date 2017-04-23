@@ -1,0 +1,11 @@
+helo me
+mail from:<FROM_ADDRESS>
+rcpt to:<TARGET_EMAIL_1>
+rcpt to:<TARGET_EMAIL_2>
+data
+Subject: foo!
+Date: today
+
+FOO!
+.
+quit

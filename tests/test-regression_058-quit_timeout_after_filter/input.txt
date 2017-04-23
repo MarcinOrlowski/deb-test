@@ -1,0 +1,4 @@
+helo me
+mail from:<sender@example.com>
+rcpt to:<recipient@example.com>
+quit

@@ -1,0 +1,11 @@
+ehlo me
+starttls
+mail from:<FROM_ADDRESS>
+rcpt to:<TARGET_EMAIL>
+data
+Subject: TEST_NUM
+Date: today
+
+FOO!
+.
+quit
